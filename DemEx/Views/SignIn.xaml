@@ -1,0 +1,46 @@
+﻿<Window x:Class="DemEx.Views.SignIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DemEx.Views"
+        mc:Ignorable="d"
+        Title="Авторизация" 
+        Height="350" 
+        Width="300"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <TextBlock 
+                Text="логин"
+                Margin="5"/>
+
+            <TextBox 
+                Margin="3"
+                Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <TextBlock
+                Text="пароль"
+                Margin="5"/>
+
+            <TextBox 
+                Margin="3"
+                Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"/>
+            
+            <StackPanel
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Margin="5">
+                <Button 
+                    Content="Войти"
+                    Margin="0 0 10 0"
+                    Command="{Binding SignInButton}"/>
+                <Button
+                    Content="Гость"
+                    Margin="10 0 0 0"
+                    Command="{Binding SignInGuestButton}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
